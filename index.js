@@ -25,7 +25,7 @@ bot.on("message", async message => {
 	  const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(`Sending users message:\n\t${sayMessage}`);
-    message.guild.members.forEach(member => member.send(`Message from: <@${message.author.id}>:\n\t${sayMessage}`));
+    message.guild.members.forEach(member => member.send(`${sayMessage}`));
   }
 });
 
