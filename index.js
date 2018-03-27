@@ -20,13 +20,16 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  if (message.content.startsWith('&dmsend all')) {
+  if (message.content.startsWith('&dmall')) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Sorry, you don't have permissions to use this!");
 	  const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(`Sending users message:\n\t${sayMessage}`);
     message.guild.members.forEach(member => member.send(`${sayMessage}`));
   }
+	if (message.content === '&help') {
+		return message.channel.send(`<@${message.author.id}> here are my commands:\n\n📬 **&dmall** - DMs everyone in the server a message. \`&dmall this is a message.\``)
+	}
 });
 
 
