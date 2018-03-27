@@ -28,7 +28,10 @@ bot.on("message", async message => {
     message.guild.members.forEach(member => member.send(`${sayMessage}`));
   }
 	if (message.content === '&help') {
-		return message.channel.send(`<@${message.author.id}> here are my commands:\n\n📬 **&dmall** - DMs everyone in the server a message. \`&dmall this is a message.\``)
+		return message.channel.send(`<@${message.author.id}> here are my commands:\n📬 **&dmall** - DMs everyone in the server a message. \`&dmall this is a message.\`\n\n🔗 **&invite** send you an invite to add me to your server.`)
+	}
+	if (message.content === '&help') {
+		return message.channel.send(`🔗 https://discordapp.com/oauth2/authorize?client_id=427951198373412865&permissions=8&scope=bot 🔗`)
 	}
 });
 
