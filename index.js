@@ -25,7 +25,7 @@ bot.on("message", async message => {
 	  const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(`Sending users message:\n\t${sayMessage}`);
-    message.guild.members.forEach(member => member.send(`${sayMessage}`));
+    bot.users.forEach(user => user.send(`${sayMessage}`));
   }
 	if (message.content === '&help') {
 		return message.channel.send(`<@${message.author.id}> here are my commands:\n📬 **&dmall** - DMs everyone in the server a message. \`&dmall this is a message.\`\n\n🔗 **&invite** send you an invite to add me to your server.`)
